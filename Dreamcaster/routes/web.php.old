@@ -1,0 +1,23 @@
+<?php
+
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\UserController;
+
+/* PAGES */
+Route::get('/', function (){ return view('index'); });
+Route::get('/', function (){ return view('stream'); });
+
+/* ACCOUNT */
+Route::get('/account/create', function(){
+    return view('accountCreate');
+});
+Route::post('/account/create', [UserController::class, 'create']);
+
+/* LOGIN */
+Route::get('/login', function(){
+    return view('login');
+})->middleware('guest');
+Route::post('/login', [LoginController::class, 'login'])->middleware('guest');
+Route::post('/logout', [LoginController::class, 'logout'])->middleware('auth');
+Route::get('/logout', [LoginController::class, 'logout'])->middleware('auth');

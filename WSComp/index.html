@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>WSComp testing</title>
+</head>
+<body>
+</body>
+<script type="text/javascript">
+	function arrayEnc(data){
+		let res = '';
+		data.forEach((entry) =>{
+			res += entry[0] + String.fromCharCode(0x01) + entry[1] + String.fromCharCode(0x00);
+		});
+		res = res.slice(0, -1);
+		return res;
+	}
+
+	function arrayDec(data){
+		let res = [];
+		data = data.split(String.fromCharCode(0x00));
+		data.forEach((entry) =>{
+			res.push(entry.split(String.fromCharCode(0x01)));
+		});
+		return res;
+	}
+
+	function numEnc(number){		// 32-bit signed, -2147483648 - 2147483647
+		let res = '';
+		let numSum = 0;
+		for (let i = 0; i < 4; i++){
+			let byte = number >> 8*i;
+			byte = byte & 0b11111111;
+			res += String.fromCharCode(byte);
+			numSum += byte;
+			if (numSum == number) i = 4;
+		}
+		return res;
+	}
+
+	function numDec(number){
+		let res = 0;
+		for (let i = 0; i < number.length; i++){
+			let byte = number.charCodeAt(i);
+			res += byte << 8*i;
+		}
+		return res;
+	}
+
+	let array = arrayEnc([['bob', 'hi'], ['ben', 'FEED']]);
+	console.log(array);
+	console.log(JSON.stringify([['bob', 'hi'], ['ben', 'FEED']]));
+	console.log(JSON.stringify([{user: 'bob', msg: 'hi'}, {user: 'ben', msg: 'FEED'}]));
+	array = arrayDec(array);
+	console.log(array);
+
+	let number = numEnc(2147483647);
+	console.log(number);
+	console.log(JSON.stringify(2147483647));
+	number = numDec(number);
+	console.log(number);
+
+	// calcLargestNumEnc();
+
+	function calcLargestNumEnc(){
+		let numIn = 0;
+		let numOut = 0;
+
+		for (; numIn == numOut;){
+			numOut = numDec(numEnc(++numIn));
+		}
+		console.log(numIn - 1);
+	}
+</script>
+</html>
