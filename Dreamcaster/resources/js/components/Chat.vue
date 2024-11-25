@@ -9,7 +9,7 @@
 	let isScrolling = ref(false);
 	let emotes = ['kayPog', 'gjob', 'OiMinna','Kappa','LUL','OMEGALUL','KEKW','KEKWait','MikuHands','HUH','SmugAsuka','SenkoHmm','Heh','Fakiu','WTF','SmugUsagi','catHehe','Oky','peepoHmm','catBleh','HYPERS','SusWokege','GGEZ','AYAYA','Sadge','peepoHappy','POGGIES','Prayge','FeelsDankMan','pepeHeHeh','mlady','Luvv','peepoBlanket','peepoSmile','PepePoint','PepeSus','Shruge','5Head','PINGAS','catHeh','ItsOkay','dogeKek','WeirdDog','fineDog', 'PepeHands', 'widepeepoHappy', 'monkaS', 'monkaEyes', 'FeelsStrongMan', 'peepoLove', 'monkaGun', 'monkaH', 'YouDied', 'Madge', 'PauseChamp', 'Okayge', 'SmileW', 'pepoHmm', 'peepoShrug', 'Wokege', 'PeepoWeird', 'FeelsWeirdMan', 'peepoShy', 'Susge', 'KKona', 'Bedge', 'peepoHug', 'SuchMeme', 'AYAYAHyper', 'catOK', 'BOOMER', 'KermitENOUGH', 'peepoRiot', 'BASED', 'FeelsOkayMan', 'PeepoFinger', 'Weirdge', 'peepoExit', 'haHAA'];		// Hardcoded, will be sent over ws
 
-	ws = new WebSocket('ws://98.128.174.220:4433/' + laraId);
+	ws = new WebSocket('ws://127.0.0.1:4433/' + laraId);
 
 	ws.onopen = () =>{
 		ws.onmessage = (event) =>{
@@ -40,7 +40,7 @@
 		}
 	}
 	// ws.onerror = () => {
-	// 	ws = new WebSocket('ws://10.4.25.251:4433/' + laraId);
+	// 	ws = new WebSocket('ws://127.0.0.1:4433/' + laraId);
 	// }
 
 	function sendMsg(){
