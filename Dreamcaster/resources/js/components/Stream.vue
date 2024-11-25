@@ -10,7 +10,7 @@
             controls: true,
             sources: [
                 {
-                    src: 'http://98.128.174.220:8080/' + channel + '/index.m3u8',
+                    src: 'http://127.0.0.1:8080/' + channel + '/index.m3u8',
                     type: 'application/vnd.apple.mpegurl'
                 }]
         });
