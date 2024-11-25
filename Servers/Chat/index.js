@@ -29,7 +29,7 @@ let messageId = 0;
 wss.on('connection', async (ws, req) =>{
 	let userId = +req.url.substring(1);
 
-	let userData = await fetch(`http://hoshizora.cafe/account/get`,
+	let userData = await fetch(`http://127.0.0.1:8000/account/get`,
 	{
 		method: "POST",
 		headers: {
