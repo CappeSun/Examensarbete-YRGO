@@ -19,17 +19,26 @@ All I wrote for the stream part was the config and authentication server for NGI
 
 # Installation
 
-This is a Laravel app using Vite as the development server. You can run it with \n
+This is a Laravel app using Vite as the development server. You can run it with
+
 `npm install`
+
 `composer run dev`
+
 in the 'Dreamcaster/' directory. The chat server expects the port to be 8000.
 
 To run the chat server, simply run
+
 `npm install`
+
 `node index.js`
+
 in the 'Servers/Chat/' directory.
 
 Install NGINX from https://nginx.org/en/docs/install.html and follow the instructions at https://github.com/arut/nginx-rtmp-module/wiki to install the rtmp module. Use the nginx.conf provided in 'Servers/NGINX/'. Then run the server and start the auth with
+
 `npm install`
+
 `node index.js`
+
 in the 'Servers/Auth/' directory.
