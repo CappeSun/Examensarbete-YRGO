@@ -2,11 +2,12 @@
  Official repo for the Dreamcaster Project, a livestreaming service aimed at gaming (very much in progress).
 
 
+
 # This and everything below was added at a later point
 
 This is not the actual official repo, just a teacher's reference for grading, and for anyone else interested, so that I can keep updating the project. The real repo is private for now.
 
-# Required software
+# Additional required software
 
 You'll need NGINX with the RTMP module installed for the stream server, however you may omit this if you're not interested. What it does is simply:
 
