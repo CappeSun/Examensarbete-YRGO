@@ -25,7 +25,7 @@ This is a Laravel app using Vite as the development server. You can run it with
 in the 'Dreamcaster/' directory. The chat server expects the port to be 8000.
 
 To run the chat server, simply run
-´npm install´
+`npm install`
 ´node index.js´
 in the 'Servers/Chat/' directory.
 
