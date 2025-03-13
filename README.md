@@ -12,7 +12,7 @@ You'll need NGINX with the RTMP module installed for the stream server, however 
 
 1. Accept a connection over RTMP from OBS or similar software.
 2. Check with the auth server if the key is 'cappestreamthebeststream'.
-3. Serve the stream at :8080/{name, or here hardcoded to cappesun}/index.m3u8.
+3. Serve the stream at :8080/cappesun/index.m3u8.
 
 All I wrote for the stream part was the config and authentication server for NGINX to serve the stream at another location than specified with the key, more or less.
 
