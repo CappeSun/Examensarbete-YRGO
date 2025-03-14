@@ -7,9 +7,9 @@
 
 This is not the actual official repo, just a teacher's reference for grading, and for anyone else interested, so that I can keep updating the project. The real repo is private for now.
 
-# Additional required software
+# Required software
 
-You'll need NGINX with the RTMP module installed for the stream server, however you may omit this if you're not interested. What it does is simply:
+Node.js and npm are required for the chat server, the auth server and for installing the required packages. Composer is used to run the dev server. You'll need NGINX with the RTMP module installed for the stream server, however you may omit this if you're not interested, as it is not critical for running the rest of the application. What it does is simply:
 
 1. Accept a connection over RTMP from OBS or similar software.
 2. Check with the auth server if the key is 'cappestreamthebeststream'.
@@ -35,7 +35,7 @@ To run the chat server, simply run
 
 in the 'Servers/Chat/' directory.
 
-Install NGINX from https://nginx.org/en/docs/install.html and follow the instructions at https://github.com/arut/nginx-rtmp-module/wiki to install the rtmp module. Use the nginx.conf provided in 'Servers/NGINX/'. Then run the server and start the auth with
+Install NGINX from https://nginx.org/en/docs/install.html and follow the instructions at https://github.com/arut/nginx-rtmp-module/wiki to install the rtmp module. Use the nginx.conf provided in 'Servers/NGINX/'. Then start NGINX and run the auth server with
 
 `npm install`
 
