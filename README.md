@@ -7,6 +7,26 @@
 
 This is not the actual official repo, just a teacher's reference for grading, and for anyone else interested, so that I can keep updating the project. The real repo is private for now.
 
+# Features
+
+Stream server: Takes rtmp from OBS or similar and a key, which it delivers as HLS at a technically dynamic but currently hardcoded url.
+
+Chat server: Relays incoming messages to all connected users and allows mod actions from a certain user (id 1 in database), which is also hardcoded in this version.
+
+Laravel app: Allows login and signup, sends and receives chat messages and views the stream.
+
+# Technologies
+
+NGINX: The stream server, using the rtmp module.
+
+Node.js: The chat server and the auth server.
+
+Laravel: Backend for the website.
+
+MySQL: Database for the website.
+
+Vue.js: Frontend for the website.
+
 # Required software
 
 Node.js and npm are required for the chat server, the auth server and for installing the required packages. Composer is used to run the dev server. You'll need NGINX with the RTMP module installed for the stream server, however you may omit this if you're not interested, as it is not critical for running the rest of the application. What it does is simply:
@@ -25,7 +45,7 @@ This is a Laravel app using Vite as the development server. You can run it with
 
 `composer run dev`
 
-in the 'Dreamcaster/' directory. The chat server expects the port to be 8000.
+in the 'Dreamcaster/' directory. The chat server expects the port to be 8000. And don't forget the .env!
 
 To run the chat server, simply run
 
