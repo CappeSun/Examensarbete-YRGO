@@ -11,7 +11,7 @@ This is not the actual official repo, just a teacher's reference for grading, an
 
 Stream server: Takes rtmp from OBS or similar and a key, which it delivers as HLS at a technically dynamic but currently hardcoded url.
 
-Chat server: Relays incoming messages to all connected users and allows mod actions from a certain user (id 1 in database), which is also hardcoded in this version.
+Chat server: Relays incoming messages to all connected users and allows mod actions from a certain user (user with id 1 in database), which is also hardcoded in this version.
 
 Laravel app: Allows login and signup, sends and receives chat messages and views the stream.
 
